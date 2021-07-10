@@ -70,3 +70,19 @@ function showCollection(results){
     //- Return the array with the matching results. If no results are found, return an empty array.
 
   //- Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
+
+function findByArtist('artist'){
+  let results = [];
+  //create an array to hold results as an empty array first
+  for(const item of collection){
+    if(item.artist === artist){
+    results.push(item.artist)
+    return results = [item.artist];
+    }
+  //looping through collection
+
+  //adding objects with item.artist that have been looped through AND results of 'artist ' string parameter
+  }
+  }
+
+  console.log(findByArtist(collection));
