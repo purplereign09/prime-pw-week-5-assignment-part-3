@@ -91,21 +91,33 @@ function findByArtist('artist'){
 //Stetch Goal
 
 
-function search(object){
+function search(value){
+  //function named search taking an input parameter for a search criteria object
+  for(const key of Object.keys(collection)){
+    //looping through the keys of the global variable collection
+    if(object.artist && object.yearPublished === value){
+      //if the values artist and year are equal to the search criteria 'value'
+      return [collection.artist, collection.yearPublished]
+      //return the collection's artists and the year published
+    }
+    else if (value {}){
+      //if the object 'value' is empty,
+      return collection.artist
+      //return only the collection's artists
+    }
+  }
 
-}
-
-
-
-const jazz = {
+  const jazz = {
   artist: 'Ray Charles',
   year: 1957
 }
+
+console.log(search(jazz));
   //- Create a function called `search`. This function should:
     //- Take an input parameter for a search criteria object.
     //-Create your solution based on a search object that has these properties:
 
-     artist: 'Ray Charles', year: 1957 }
+     //artist: 'Ray Charles', year: 1957 }
 
      - The returned output from `search` should meet these requirements:
        - Return a new array of all items in the `collection` matching *all* of the search criteria.
