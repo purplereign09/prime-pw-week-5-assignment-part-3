@@ -71,55 +71,61 @@ function showCollection(results){
 
   //- Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 
-function findByArtist('artist'){
+function findByArtist(artist){
   let results = [];
   //create an array to hold results as an empty array first
   for(const item of collection){
-    if(item.artist === 'artist'){
+    if(item.artist === artist){
     results.push(item.artist)
     return results = [item.artist];
     }
   //looping through collection
 
   //adding objects with item.artist that have been looped through AND results of 'artist ' string parameter
-  }
+    }
   }
 
-  console.log(findByArtist(collection));
+  console.log(findByArtist('Pink Floyd'));
 
 
 //Stetch Goal
 
 
-function search(value){
+function search( value = {}){
+  if(Object.keys(value).length === 0){
+    return collection
+  }
+  let song = [];
   //function named search taking an input parameter for a search criteria object
-  for(const key of Object.keys(collection)){
+  for(const key of collection){
     //looping through the keys of the global variable collection
-    if(object.artist && object.yearPublished === value){
+    if(key.artist === value.artist && key.yearPublished === value.year){
       //if the values artist and year are equal to the search criteria 'value'
-      return [collection.artist, collection.yearPublished]
-      //return the collection's artists and the year published
-    }
-    else if (value {}){
-      //if the object 'value' is empty,
-      return collection.artist
-      //return only the collection's artists
+      song.push(key);
     }
   }
-
-  const jazz = {
-  artist: 'Ray Charles',
-  year: 1957
+  return song;
+  //return the collection's artists and the year published
 }
 
-console.log(search(jazz));
+
+  const jazz = {
+  artist: 'Michael Jackson',
+  year: 1982
+}
+
+const empty = {
+
+}
+
+console.log(search());
   //- Create a function called `search`. This function should:
     //- Take an input parameter for a search criteria object.
     //-Create your solution based on a search object that has these properties:
 
      //artist: 'Ray Charles', year: 1957 }
 
-     - The returned output from `search` should meet these requirements:
-       - Return a new array of all items in the `collection` matching *all* of the search criteria.
-       - If no results are found, return an empty array.
-       - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
+     //- The returned output from `search` should meet these requirements:
+      // - Return a new array of all items in the `collection` matching *all* of the search criteria.
+       //- If no results are found, return an empty array.
+       //- If there is no search object or an empty search object provided as input, then return all albums in the `collection`.
